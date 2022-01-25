@@ -1,0 +1,47 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\lambe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add next react react-dom-
+
+PATH: 
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Users\lambe\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\lambe\AppData\Local\Programs\Python\Python37\;C:\Program Files\Java\zulu11.48.21-ca-jdk11.0.11-win_x64\bin;C:\app\lambe\product\18.0.0\dbhomeXE\bin;C:\Rtools\bin;c:\Rtools\bin;c:\Rtools\mingw_32\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Program Files\MongoDB\Server\3.4\bin;C:\Hadoop\bin;C:\Users\lambe\Anaconda3;C:\Users\lambe\Anaconda3\Library\bin;C:\Users\lambe\Anaconda3\Scripts;C:\Spark\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\GTK2-Runtime Win64\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\xampp\php;C:\composer;C:\Users\lambe\AppData\Local\Android\Sdk\platform-tools;C:\Users\lambe\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\lambe\AppData\Local\Programs\Python\Python37\;C:\Users\lambe\AppData\Roaming\TinyTeX\bin\win32;C:\Ruby26-x64\bin;C:\Users\lambe\Anaconda3;C:\Users\lambe\Anaconda3\Library\mingw-w64\bin;C:\Users\lambe\Anaconda3\Library\usr\bin;C:\Users\lambe\Anaconda3\Library\bin;C:\Users\lambe\Anaconda3\Scripts;C:\Users\lambe\AppData\Local\Microsoft\WindowsApps;C:\Users\lambe\AppData\Local\atom\bin;C:\MiKTeX 2.9\miktex\bin\x64\;C:\Users\lambe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lambe\AppData\Local\GitHubDesktop\bin;C:\Users\lambe\AppData\Local\Microsoft\WindowsApps;C:\Users\lambe\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Users\lambe\AppData\Roaming\Composer\vendor\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;;C:\Users\lambe\AppData\Local\Programs\Hyper\resources\bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  14.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-dom-: Not found
+      at Request.params.callback [as _callback] (C:\Users\lambe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66140:18)
+      at Request.self.callback (C:\Users\lambe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140885:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (C:\Users\lambe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141857:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (C:\Users\lambe\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141779:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  {
+    "name": "ImersaoReact",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
