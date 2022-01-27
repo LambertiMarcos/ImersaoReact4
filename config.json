@@ -1,5 +1,5 @@
 {
-    "name": "Aluracord - Matrix (peas)",
+    "name": "Aluracord - Matrix (Revolutions)",
     "theme": {
         "colors": {
             "primary": {
@@ -11,8 +11,8 @@
                 "500": "#3F9142",
                 "600": "#2F8132",
                 "700": "#207227",
-                "800": "#0E5814",
-                "900": "#05400A"
+                "800": "#40E5FD", 
+                "900": "#02CAFC"
             },
             "neutrals": {
                 "000": "#FFFFFF",
@@ -69,3 +69,4 @@
         "https://i.pinimg.com/originals/96/34/c5/9634c520c9a3cd4e7f23190bb2c96500.gif"
     ]
 }
+

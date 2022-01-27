@@ -11,7 +11,7 @@ function Titulo(props) {
       <Tag>{props.children}</Tag>
       <style jsx>{`
             ${Tag} {
-                color: ${appConfig.theme.colors.neutrals['000']};
+                color: ${appConfig.theme.colors.neutrals['100']};
                 font-size: 24px;
                 font-weight: 600;
             }
@@ -33,8 +33,8 @@ export default function PaginaInicial() {
       <Box
         styleSheet={{
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          backgroundColor: appConfig.theme.colors.primary[500],
-          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+          backgroundColor: appConfig.theme.colors.neutrals[100],
+          backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/09/wall-e-access-to-an-axiom-life-pod-1024x576.jpeg)',
           backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
         }}
       >
@@ -100,8 +100,8 @@ export default function PaginaInicial() {
               textFieldColors={{
                 neutral: {
                   textColor: appConfig.theme.colors.neutrals[200],
-                  mainColor: appConfig.theme.colors.neutrals[900],
-                  mainColorHighlight: appConfig.theme.colors.primary[500],
+                  mainColor: appConfig.theme.colors.neutrals[700],
+                  mainColorHighlight: appConfig.theme.colors.primary[800],
                   backgroundColor: appConfig.theme.colors.neutrals[800],
                 },
               }}
@@ -112,10 +112,10 @@ export default function PaginaInicial() {
               label='Entrar'
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                contrastColor: appConfig.theme.colors.neutrals["800"],
+                mainColor: appConfig.theme.colors.primary[800],
+                mainColorLight: appConfig.theme.colors.primary[100],
+                mainColorStrong: appConfig.theme.colors.primary[900],
               }}
             />
           </Box>
