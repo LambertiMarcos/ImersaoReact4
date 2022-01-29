@@ -1,10 +1,31 @@
-import { Box, Text, TextField, Image, Button } from '@skynexui/components';
+import { Box, Button, Text, TextField, Image } from '@skynexui/components';
 import React from 'react';
 import appConfig from '../config.json';
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzMzMzgzMCwiZXhwIjoxOTU4OTA5ODMwfQ.62fihY9GgqWgUA1yCTWrAxtob2r5o_ATmTho2g5JlnE';
+const SUPABASE_URL = 'https://uvxocojwbsxexgtwfwil.supabase.co';
+
+// Create a single supabase client for interacting with your database
+const supabaseClient = createClient(SUPABASE_URL , SUPABASE_ANON_KEY)
+const userLog = 'lambertimarcos'
+//console.log(dadosSupabase);
 
 export default function ChatPage() {
     const [mensagem , setMensagem ] = React.useState('');
     const [listaDeMensagens, setListaDeMensagens] = React.useState([]);
+
+    React.useEffect(() => {
+        supabaseClient
+            .from('mensagens')
+            .select('*')
+            .order('id', {ascending: false}).
+            then(({data}) => {
+                console.log('Dados da consulta:', data);
+                setListaDeMensagens(data);
+            });
+    }, []);
+
 
     /*
     // Usuário
@@ -20,15 +41,23 @@ export default function ChatPage() {
 
     function handleNovaMensagem(novaMensagem) {
         const mensagem = {
-            id: listaDeMensagens.length +1,
-            de: 'marcoslamberti',
+           // id: listaDeMensagens.length +1,
+            de: 'lambertimarcos',
             texto: novaMensagem,
         };
 
-        setListaDeMensagens([
-            mensagem,
-            ...listaDeMensagens,
-        ]);
+        supabaseClient
+            .from('mensagens')
+            .insert([
+                mensagem
+            ])
+            .then(({ data }) =>{
+                console.log('Criando mensagem:' , data);
+                setListaDeMensagens([
+                data[0],
+                ...listaDeMensagens,
+                ]);
+            });
         setMensagem('');
     }
 
@@ -114,6 +143,7 @@ export default function ChatPage() {
                                 backgroundColor: appConfig.theme.colors.neutrals[800],
                                 marginRight: '12px',
                                 color: appConfig.theme.colors.neutrals[200],
+                                textShadow: '1px 1px 2px black, 0 0 10px yellow, 0 0 4px darkblue',
                             }}
                         />
                     </Box>
@@ -153,6 +183,7 @@ function MessageList(props) {
                 flex: 1,
                 color: appConfig.theme.colors.neutrals["000"],
                 marginBottom: '16px',
+                
             }}
         >
             {props.mensagens.map((mensagem)=> {
@@ -166,7 +197,7 @@ function MessageList(props) {
                             marginBottom: '12px',
                             hover: {
                                 backgroundColor: appConfig.theme.colors.neutrals[700],
-                            }
+                            } 
                         }}
                     >
                         <Box
@@ -181,17 +212,29 @@ function MessageList(props) {
                                     borderRadius: '50%',
                                     display: 'inline-block',
                                     marginRight: '8px',
-                                }}
-                                src={`https://github.com/lambertiMarcos.png`}
+                                    hover: {
+                                        width: '60px', 
+                                        height: '60px',
+                                    }
+                                        
+                            }}
+
+                            src={`https://github.com/${mensagem.de}.png`}
                             />
-                            <Text tag="strong">
-                                {mensagem.de}
+                            <Text tag="strong"
+                                styleSheet={{
+                                    Color: '#00FF00',
+                                }}
+                            >
+                            {mensagem.de}
                             </Text>
+
                             <Text
                                 styleSheet={{
                                     fontSize: '10px',
                                     marginLeft: '8px',
-                                    color: appConfig.theme.colors.neutrals[300],
+                                    color: appConfig.theme.colors.neutrals[400],
+
                                 }}
                                 tag="span"
                             >
@@ -199,6 +242,7 @@ function MessageList(props) {
                             </Text>
                         </Box>
                         {mensagem.texto}
+                        
                     </Text>
                 );
             })}
